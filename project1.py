@@ -60,16 +60,18 @@ def q_1():
 def q_2():
   '''Question 1 results'''
   q12 = "".join(qonetwo % (author, views) for author, views in get_qtwo())
+  q12_console = q12.replace("<div>","").replace("</div>","")
   html = HTML_WRAP % q12
-  print(q12)
+  print(q12_console)
   return html
 
 @app.route('/question3', methods=['GET'])
 def q_3():
   '''Question 3 results'''
   q3 = "".join(qthree % (date, errors) for date, errors in get_qthree())
+  q3_console = q3.replace("<div>","").replace("</div>","")
   html = HTML_WRAP % q3
-  print(q)
+  print(q3_console)
   return html
 
 if __name__ == '__main__':
