@@ -11,9 +11,7 @@ def get_qone():
   db = psycopg2.connect(database=DBNEWS)
   c = db.cursor()
   c.execute("""
-SELECT Split_part(l.path, '/', 3), Count(*) AS num FROM log l INNER JOIN ( 
-SELECT art.slug FROM articles AS art GROUP BY art.slug) a ON l.path LIKE '%' 
-|| a.slug GROUP BY l.path ORDER BY num DESC LIMIT 3
+SELECT a.title, Count(*) AS num FROM log l INNER JOIN (SELECT art.title, art.slug FROM articles AS art GROUP BY art.title, art.slug) a ON l.path LIKE '%' || a.slug GROUP BY a.title ORDER BY num DESC LIMIT 3
   """)
   qone = c.fetchall()
   db.close()
