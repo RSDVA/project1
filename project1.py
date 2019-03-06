@@ -51,8 +51,9 @@ def main():
 def q_1():
   '''Question 1 results'''
   q12 = "".join(qonetwo % (articles, views) for articles, views in get_qone())
+  q12_console = q12.replace("<div>","").replace("</div>","")
   html = HTML_WRAP % q12
-  print(q12)
+  print(q12_console)
   return html
 
 @app.route('/question2', methods=['GET'])
