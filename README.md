@@ -10,6 +10,15 @@ These instructions will get you a copy of the project up and running on your loc
 
 You will need psycopg2, and flask installed
 
+## Installing
+
+Run pip install psycopg2, and pip install flask
+
+1.) Then download the news data base and unzip it to the same directory as you cloned this repo  https://d17h27t6h515a5.cloudfront.net/topher/2016/August/57b5f748_newsdata/newsdata.zip
+
+2.) run this command psql -d news -f newsdata.sql
+
+
 ## Question Results
 ### Q1:
 	Candidate is jerk, alleges rival - 338647 views
