@@ -12,9 +12,9 @@ You will need psycopg2, and flask installed
 
 ## Question Results
 ### Q1:
-	candidate-is-jerk - 338647 views
-	bears-love-berries - 253801 views
-	bad-things-gone - 170098 views
+	Candidate is jerk, alleges rival - 338647 views
+	Bears love berries, alleges bear - 253801 views
+	Bad things gone, say good people - 170098 views
 
 ### Q2:
     Ursula La Multa - 507594 views
