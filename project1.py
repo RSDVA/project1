@@ -1,5 +1,4 @@
 #!/usr/bin/env python3
-# 
 # A web service accessing database news to answer 3 questions
 
 from flask import Flask, request, redirect, url_for
@@ -40,39 +39,42 @@ qonetwo = '''\
 qthree = '''\
     <div>%s - %s%% errors</div>
 '''
-
 @app.route('/', methods=['GET'])
 def main():
-  '''Main page for questions'''
+    '''Main page for questions'''
+    return HTML_WRAP % ""
 
-  return HTML_WRAP % ""
 
 @app.route('/question1', methods=['GET'])
 def q_1():
-  '''Question 1 results'''
-  q12 = "".join(qonetwo % (articles, views) for articles, views in get_qone())
-  q12_console = q12.replace("<div>","").replace("</div>","")
-  html = HTML_WRAP % q12
-  print(q12_console)
-  return html
+    '''Question 1 results'''
+    q12 = "".join(
+      qonetwo % (articles, views) for articles, views in get_qone())
+    q12_console = q12.replace("<div>", "").replace("</div>", "")
+    html = HTML_WRAP % q12
+    print(q12_console)
+    return html
+
 
 @app.route('/question2', methods=['GET'])
 def q_2():
-  '''Question 1 results'''
-  q12 = "".join(qonetwo % (author, views) for author, views in get_qtwo())
-  q12_console = q12.replace("<div>","").replace("</div>","")
-  html = HTML_WRAP % q12
-  print(q12_console)
-  return html
+    '''Question 1 results'''
+    q12 = "".join(qonetwo % (author, views) for author, views in get_qtwo())
+    q12_console = q12.replace("<div>", "").replace("</div>", "")
+    html = HTML_WRAP % q12
+    print(q12_console)
+    return html
+
 
 @app.route('/question3', methods=['GET'])
 def q_3():
-  '''Question 3 results'''
-  q3 = "".join(qthree % (date, errors) for date, errors in get_qthree())
-  q3_console = q3.replace("<div>","").replace("</div>","")
-  html = HTML_WRAP % q3
-  print(q3_console)
-  return html
+    '''Question 3 results'''
+    q3 = "".join(qthree % (date, errors) for date, errors in get_qthree())
+    q3_console = q3.replace("<div>", "").replace("</div>", "")
+    html = HTML_WRAP % q3
+    print(q3_console)
+    return html
+
 
 if __name__ == '__main__':
-  app.run(host='0.0.0.0', port=8000)
+    app.run(host='0.0.0.0', port=8000)
