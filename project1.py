@@ -52,7 +52,7 @@ def q_1():
   '''Question 1 results'''
   q12 = "".join(qonetwo % (articles, views) for articles, views in get_qone())
   html = HTML_WRAP % q12
-  print(html)
+  print(q12)
   return html
 
 @app.route('/question2', methods=['GET'])
@@ -60,7 +60,7 @@ def q_2():
   '''Question 1 results'''
   q12 = "".join(qonetwo % (author, views) for author, views in get_qtwo())
   html = HTML_WRAP % q12
-  print(html)
+  print(q12)
   return html
 
 @app.route('/question3', methods=['GET'])
@@ -68,7 +68,7 @@ def q_3():
   '''Question 3 results'''
   q3 = "".join(qthree % (date, errors) for date, errors in get_qthree())
   html = HTML_WRAP % q3
-  print(html)
+  print(q)
   return html
 
 if __name__ == '__main__':
