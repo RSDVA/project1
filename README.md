@@ -18,6 +18,15 @@ Run pip install psycopg2, and pip install flask
 
 2.) run this command psql -d news -f newsdata.sql
 
+## Running the Project
+
+1.) Open a command prompt of your choice (I used Git Bash) and cd into the directory where the project.py and newsdb.py are located
+
+2.) Then run python ./project1.py
+
+3.) Now open up your favorite browser (I used Chrome) and go to http://localhost:8000
+
+4.) You will see 3 Buttons each one corresponds to each question for this project.  Click on it and it will call a query on the data base and show the results both in the web page below the buttons and in the Git Bash console.
 
 ## Question Results
 ### Q1:
